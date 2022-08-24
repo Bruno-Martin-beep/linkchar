@@ -3,6 +3,19 @@
   font-family: 'Quicksand', sans-serif;
 }
 
+*::-webkit-scrollbar {
+  width: 0.6vw;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #17171B;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 100vw;
+  background-color: #404040;
+}
+
 html {
   font-size: 1vw;
 }
