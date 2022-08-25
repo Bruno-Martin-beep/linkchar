@@ -1,13 +1,12 @@
-import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import playIcon from "../../assets/play.svg";
 import starIcon from "../../assets/star.svg";
 import { getImage } from "../api/getImage";
 import { selectGenres } from "../features/genresSlice";
-import { PopularMovie } from "../features/popularSlice";
+import { Movie } from "../types";
 
 interface prop {
-  movie: PopularMovie;
+  movie: Movie;
 }
 
 const DefaultFilm = ({ movie }: prop) => {
@@ -22,14 +21,18 @@ const DefaultFilm = ({ movie }: prop) => {
       <div className="absolute w-full h-full bg-gradient-to-r from-neutral-500 via-neutral-900 to-neutral-500 z-0" />
       <img
         src={getImage(movie.backdrop_path)}
-        className="absolute w-full h-full z-0"
+        className="absolute top-1/2 -translate-y-1/2 w-full z-0"
         alt=""
       />
       <div className="flex items-center absolute bottom-0 left-0 w-full h-16 px-6 rounded-xl bg-neutral-700/50 backdrop-blur-sm z-10">
-        <img src={playIcon} className="w-8 h-8 mr-6" alt="play" />
+        <img
+          src={playIcon}
+          className="w-8 h-8 mr-6 cursor-pointer"
+          alt="play"
+        />
         <div className="flex-grow">
           <p className="w-36 text-[0.8rem] font-bold truncate">{movie.title}</p>
-          <p className="w-36 text-xs truncate">
+          <p className="w-36 text-xs text-neutral-50/80 truncate">
             {movieGenres.slice(0, 2).join(" / ")}
           </p>
         </div>
