@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { getPopularMovies } from "../api/fechdata";
+import { getGenres, getPopularMovies } from "../api/fechdata";
 
 // Thunk
 ///////////////////////////////////////
@@ -16,5 +16,13 @@ export const getPopular = createAsyncThunk(
     const data = await getPopularMovies({ page: currentPage });
 
     return data.results;
+  }
+);
+
+export const getGenresList = createAsyncThunk(
+  "genreList/getGenres",
+  async () => {
+    const genres = await getGenres();
+    return genres.genres;
   }
 );
