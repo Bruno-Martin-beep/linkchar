@@ -1,4 +1,4 @@
-import playIcon from "../assets/play.svg";
+import playIcon from "../../assets/play.svg";
 
 const CardFilm1 = () => {
   return (

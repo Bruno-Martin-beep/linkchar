@@ -1,4 +1,4 @@
-import playTrans from "../assets/play-trans.svg";
+import playTrans from "../../assets/play-trans.svg";
 
 const CoverFilm = () => {
   return (

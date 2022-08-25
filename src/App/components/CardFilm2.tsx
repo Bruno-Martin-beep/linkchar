@@ -1,9 +1,9 @@
-import pauseIcon from "../assets/pause-trans.svg";
-import sunIcon from "../assets/sun.svg";
-import inputRange from "../assets/input-range.svg";
-import options from "../assets/options.svg";
-import sound from "../assets/sound.svg";
-import fullScreen from "../assets/fullscreen.svg";
+import pauseIcon from "../../assets/pause-trans.svg";
+import sunIcon from "../../assets/sun.svg";
+import inputRange from "../../assets/input-range.svg";
+import options from "../../assets/options.svg";
+import sound from "../../assets/sound.svg";
+import fullScreen from "../../assets/fullscreen.svg";
 
 const CardFilm2 = () => {
   return (

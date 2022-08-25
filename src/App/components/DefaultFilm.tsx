@@ -1,5 +1,5 @@
-import playIcon from "../assets/play.svg";
-import starIcon from "../assets/star.svg";
+import playIcon from "../../assets/play.svg";
+import starIcon from "../../assets/star.svg";
 
 const DefaultFilm = () => {
   return (

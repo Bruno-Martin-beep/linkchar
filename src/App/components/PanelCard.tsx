@@ -1,5 +1,5 @@
-import playIcon from "../assets/play.svg";
-import eye from "../assets/eye.svg";
+import playIcon from "../../assets/play.svg";
+import eye from "../../assets/eye.svg";
 
 const PanelCard = () => {
   return (

@@ -1,6 +1,6 @@
 import PanelCard from "./PanelCard";
-import plus from "../assets/plus.svg";
-import arrowBack from "../assets/arrow-back.svg";
+import plus from "../../assets/plus.svg";
+import arrowBack from "../../assets/arrow-back.svg";
 
 const favGenres: { name: string; color: string }[] = [
   { name: "Action", color: "bg-indigo" },
@@ -46,6 +46,7 @@ const Panel = () => {
           {favGenres.map((genre) => (
             <li
               className={`py-1.5 px-3 rounded-full text-xs font-semibold ${genre.color}`}
+              key={genre.name}
             >
               {genre.name}
             </li>
@@ -57,7 +58,10 @@ const Panel = () => {
         </div>
         <ul className="flex flex-wrap gap-x-4 gap-y-4">
           {genres.map((genre) => (
-            <li className="py-1.5 px-3 rounded-full text-xs font-semibold bg-neutral-700/50">
+            <li
+              className="py-1.5 px-3 rounded-full text-xs font-semibold bg-neutral-700/50"
+              key={genre.name}
+            >
               {genre.name}
             </li>
           ))}

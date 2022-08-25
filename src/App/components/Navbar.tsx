@@ -1,9 +1,9 @@
-import logo from "../assets/logo.svg";
-import searchIcon from "../assets/search-icon.svg";
-import circleIcon from "../assets/circle-icon.svg";
-import circlesIcon from "../assets/4-circles-icon.svg";
-import arrowDown from "../assets/arrow-down.svg";
-import categoryIndicator from "../assets/category-indicator.svg";
+import logo from "../../assets/logo.svg";
+import searchIcon from "../../assets/search-icon.svg";
+import circleIcon from "../../assets/circle-icon.svg";
+import circlesIcon from "../../assets/4-circles-icon.svg";
+import arrowDown from "../../assets/arrow-down.svg";
+import categoryIndicator from "../../assets/category-indicator.svg";
 
 const Navbar = () => {
   return (
