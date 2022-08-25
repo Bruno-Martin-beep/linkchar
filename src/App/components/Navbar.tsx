@@ -1,15 +1,29 @@
 import logo from "../../assets/logo.svg";
-import searchIcon from "../../assets/search-icon.svg";
 import circleIcon from "../../assets/circle-icon.svg";
 import circlesIcon from "../../assets/4-circles-icon.svg";
 import arrowDown from "../../assets/arrow-down.svg";
 import categoryIndicator from "../../assets/category-indicator.svg";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../store";
+import { stateHome } from "../features/pagesSlice";
+import Search from "./Search";
 
 const Navbar = () => {
+  const dispatch = useDispatch<AppDispatch>();
+
+  const handleLogo = () => {
+    dispatch(stateHome());
+  };
+
   return (
     <div className="absolute top-0 left-0 w-full z-10">
       <div className="flex w-full h-24 bg-black">
-        <img src={logo} className="w-24 mx-16 translate-y-1" alt="logo" />
+        <img
+          src={logo}
+          className="w-24 mx-16 translate-y-1 cursor-pointer"
+          alt="logo"
+          onClick={handleLogo}
+        />
         <ul className="flex items-center flex-grow gap-20 relative h-full mx-16">
           <img
             src={categoryIndicator}
@@ -22,7 +36,7 @@ const Navbar = () => {
           <li className=" font-bold text-neutral-500">Plans</li>
         </ul>
         <div className="flex items-center space-x-6  mx-16">
-          <img src={searchIcon} className="w-8 h-8" alt="search" />
+          <Search />
           <img src={circleIcon} className="w-6 h-6" alt="circle" />
           <img src={circlesIcon} className="w-5 h-5" alt="4 circles" />
           <div className="flex items-center gap-1">

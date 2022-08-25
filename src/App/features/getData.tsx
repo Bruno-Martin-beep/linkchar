@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { getGenres, getPopularMovies } from "../api/fechdata";
+import { getGenres, getPopularMovies, getSearchMovie } from "../api/fechdata";
 
 // Thunk
 ///////////////////////////////////////
@@ -15,6 +15,14 @@ export const getPopular = createAsyncThunk(
 
     const data = await getPopularMovies({ page: currentPage });
 
+    return data.results;
+  }
+);
+
+export const getSearch = createAsyncThunk(
+  "movieList/getSearch",
+  async (info: { query: string; page?: number }) => {
+    const data = await getSearchMovie(info);
     return data.results;
   }
 );

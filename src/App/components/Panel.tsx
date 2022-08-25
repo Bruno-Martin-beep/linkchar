@@ -1,6 +1,6 @@
-import PanelCard from "./PanelCard";
 import plus from "../../assets/plus.svg";
 import arrowBack from "../../assets/arrow-back.svg";
+import PanelTrailers from "./PanelTrailers";
 
 const favGenres: { name: string; color: string }[] = [
   { name: "Action", color: "bg-indigo" },
@@ -24,22 +24,7 @@ const Panel = () => {
         className="absolute top-[12.5rem] right-0 translate-x-1/2"
         alt=""
       />
-      <div className="flex-grow pt-12 px-14 pb-4 space-y-6 overflow-auto">
-        <div className="flex items-center justify-between">
-          <h2 className="text-xl font-bold">New trailers</h2>
-          <label className="flex space-x-1">
-            <p className="text-base text-neutral-500">Sort By</p>
-            <select className="bg-black text-base">
-              <option value="today">Today</option>
-              <option value="week">Week</option>
-              <option value="month">Month</option>
-              <option value="year">Year</option>
-            </select>
-          </label>
-        </div>
-        <PanelCard />
-        <PanelCard />
-      </div>
+      <PanelTrailers />
       <div className="pt-8 pb-12 px-14 bg-darkgray space-y-6">
         <h2 className="text-xl font-bold">Favourite genres</h2>
         <ul className="flex flex-wrap gap-x-6 gap-y-4">

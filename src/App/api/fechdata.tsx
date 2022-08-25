@@ -22,3 +22,21 @@ export const getData = async (path: string, info?: {}) => {
 export const getPopularMovies = (page?: { page: number }) => {
   return getData("movie/popular", page);
 };
+
+export const getNowPlayingMovies = (page?: { page: number }) => {
+  return getData("movie/now_playing", page);
+};
+
+export const getSearchMovie = (info: { query: string; page?: number }) => {
+  return getData("search/movie", info);
+};
+
+export const getCountry = (movieID: number) => {
+  return getData("movie/" + movieID).then(
+    (response) => response.production_countries[0].name
+  );
+};
+
+export const getGenres = () => {
+  return getData("genre/movie/list");
+};

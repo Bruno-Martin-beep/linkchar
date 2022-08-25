@@ -1,17 +1,19 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "../store";
-// import { getPopularMovies } from "./api/fechdata";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Panel from "./components/Panel";
+import PopularMoviesList from "./components/PopularMoviesList";
+import SearchMoviesList from "./components/SearchMoviesList";
 import { getGenresList, getPopular } from "./features/getData";
+import { selectPage } from "./features/pagesSlice";
 
 function App() {
+  const page = useSelector(selectPage);
   const dispatch = useDispatch<AppDispatch>();
-  useEffect(() => {
-    // getPopularMovies({ page: 1 }).then((response) => console.log(response));
 
+  useEffect(() => {
     dispatch(getGenresList());
     dispatch(getPopular(1));
   }, [dispatch]);
@@ -19,8 +21,14 @@ function App() {
   return (
     <div className="bg-black w-full h-screen">
       <Navbar />
-      <Home />
-      <Panel />
+      {page === "home" && (
+        <>
+          <Home />
+          <Panel />
+        </>
+      )}
+      {page === "search" && <SearchMoviesList />}
+      {page === "popular" && <PopularMoviesList />}
     </div>
   );
 }
