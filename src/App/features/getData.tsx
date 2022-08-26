@@ -7,15 +7,21 @@ import { getGenres, getPopularMovies, getSearchMovie } from "../api/fechdata";
 export const getPopular = createAsyncThunk(
   "movieList/getPopular",
   async (currentPage: number) => {
-    // let results = {
-    //   movies: [],
-    //   currentPage: 0,
-    //   totalPages: 0,
-    // };
+    let results = {
+      movies: [],
+      currentPage: 0,
+      totalPages: 0,
+    };
 
     const data = await getPopularMovies({ page: currentPage });
 
-    return data.results;
+    results.currentPage = data.page;
+
+    results.totalPages = data.total_pages;
+
+    results.movies = data.results;
+
+    return results;
   }
 );
 

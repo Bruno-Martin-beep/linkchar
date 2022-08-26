@@ -19,7 +19,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className="bg-black w-full h-screen">
+    <div className="bg-black w-full h-screen overflow-hidden">
       <Navbar />
       {page === "home" && (
         <>
