@@ -4,7 +4,7 @@ import playIcon from "../../assets/play.svg";
 import starIcon from "../../assets/star.svg";
 import { getCountry } from "../api/fechdata";
 import { getImage } from "../api/getImage";
-import { selectGenres } from "../features/genresSlice";
+import { selectAllGenres } from "../features/genresSlice";
 import { Movie } from "../types";
 
 interface prop {
@@ -12,7 +12,7 @@ interface prop {
 }
 
 const DefaultFilm = ({ movie }: prop) => {
-  const genresList = useSelector(selectGenres);
+  const genresList = useSelector(selectAllGenres);
 
   const [country, setCountry] = useState<string>("");
 

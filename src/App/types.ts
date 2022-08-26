@@ -14,3 +14,12 @@ export interface Movie {
   vote_average: number;
   vote_count: number;
 }
+
+export type Genre = {
+  id: number;
+  name: string;
+};
+
+export interface GenreColor extends Genre {
+  color: string;
+}
