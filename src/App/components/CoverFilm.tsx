@@ -28,7 +28,7 @@ const CoverFilm = ({ movie }: prop) => {
         <img src={playTrans} className="w-6 h-6" alt="play" />
         <p className="text-xs font-semibold">Watch Now</p>
       </div>
-      <h1 className="absolute right-8 bottom-4 w-[30rem] text-[3.5rem] text-end axiforma uppercase truncate drop-shadow z-10">
+      <h1 className="absolute right-8 bottom-4 w-[40rem] text-[3.5rem] text-end axiforma uppercase truncate drop-shadow z-10">
         {movie.title}
       </h1>
     </div>
