@@ -5,7 +5,7 @@
 
 * {
   color: #fafafa;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -14,7 +14,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #17171B;
+  background-color: #17171b;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -34,8 +34,28 @@ input[type="range"] {
   accent-color: #fafafa;
 }
 
-.lightInput{
+.lightInput {
   -webkit-appearance: slider-vertical;
+}
+
+.movie-card {
+  background-color: rgb(64 64 64 / 0.5);
+  transition-property: height, background-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.movie-card:hover .movie-card-info {
+  height: 100%;
+  background-color: rgb(23 23 23 / 0.8);
+}
+
+.movie-card:hover .movie-card-info-base {
+  opacity: 0%;
+}
+
+.movie-card:hover .movie-card-info-hover {
+  top: 0%;
 }
 
 @tailwind base;
