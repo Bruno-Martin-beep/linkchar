@@ -9,11 +9,15 @@ import { getSearch } from "./getData";
 let initialState: {
   list: Movie[];
   query: string;
+  currentPage: number;
+  totalPages: number;
   isLoading: boolean;
   hasError: boolean;
 } = {
   list: [],
   query: "",
+  currentPage: 0,
+  totalPages: 0,
   isLoading: false,
   hasError: false,
 };
@@ -32,7 +36,13 @@ export const searchSlice = createSlice({
       state.hasError = false;
     });
     builder.addCase(getSearch.fulfilled, (state, action) => {
-      state.list = [...action.payload];
+      if (action.payload.currentPage < 2) {
+        state.list = [...action.payload.movies];
+      } else {
+        state.list = [...state.list, ...action.payload.movies];
+      }
+      state.currentPage = action.payload.currentPage;
+      state.totalPages = action.payload.totalPages;
       state.isLoading = false;
       state.hasError = false;
     });
@@ -48,6 +58,14 @@ export const searchSlice = createSlice({
 
 export const selectSearchListList = (state: RootState) => state.searchList.list;
 export const selectQuery = (state: RootState) => state.searchList.query;
+export const selectCurrentPageSearch = (state: RootState) =>
+  state.searchList.currentPage;
+export const selectTotalPagesSearch = (state: RootState) =>
+  state.searchList.totalPages;
+export const selectIsLoadingSearch = (state: RootState) =>
+  state.searchList.isLoading;
+export const selectHasErrorSearch = (state: RootState) =>
+  state.searchList.hasError;
 
 // Exports
 ///////////////////////////////////////

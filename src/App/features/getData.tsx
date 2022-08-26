@@ -28,8 +28,20 @@ export const getPopular = createAsyncThunk(
 export const getSearch = createAsyncThunk(
   "movieList/getSearch",
   async (info: { query: string; page?: number }) => {
+    let results = {
+      movies: [],
+      currentPage: 0,
+      totalPages: 0,
+    };
     const data = await getSearchMovie(info);
-    return data.results;
+
+    results.currentPage = data.page;
+
+    results.totalPages = data.total_pages;
+
+    results.movies = data.results;
+
+    return results;
   }
 );
 
