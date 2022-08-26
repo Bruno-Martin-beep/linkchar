@@ -25,15 +25,17 @@ const Search = () => {
   };
 
   return (
-    <>
-      <input
-        type="text"
-        value={value}
-        className="bg-black"
-        onChange={handleInput}
-      />
-      <img src={searchIcon} className="w-8 h-8" alt="search" />
-    </>
+    <div className="flex">
+      <label className="flex items-center space-x-2 py-2 pr-4 pl-2 rounded-full bg-neutral-500/50 outline outline-[0.2rem] outline-transparent focus-within:outline-neutral-50">
+        <img src={searchIcon} className="w-8 h-8" alt="search" />
+        <input
+          type="text"
+          value={value}
+          className="w-40 bg-transparent focus-visible:outline-none"
+          onChange={handleInput}
+        />
+      </label>
+    </div>
   );
 };
 
