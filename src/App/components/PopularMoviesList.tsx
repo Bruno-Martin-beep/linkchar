@@ -28,20 +28,19 @@ const PopularMoviesList = () => {
   };
 
   return (
-    <div
-      className="w-full mt-[6.1rem] px-[6rem] overflow-auto"
-      style={{ height: "calc(100vh - 6.1rem)" }}
-    >
-      <h2 className="mt-8 text-xl font-bold">Popular movies</h2>
+    <div className="w-full h-[calc(100vh-40rem)] sm:h-[calc(100vh-6rem)] mb-80 sm:mb-0 mt-80 sm:mt-24  px-[6rem] overflow-auto">
+      <h2 className="mt-24 sm:mt-8 ml-24 sm:ml-0 text-7xl sm:text-xl font-bold">
+        Popular movies
+      </h2>
       {popularList.length !== 0 && (
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 w-full mt-8">
+        <div className="grid justify-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-20 sm:gap-8 w-full mt-24 sm:mt-8">
           {popularList.map((movie) => {
             return <DefaultFilm key={movie.id} movie={movie} />;
           })}
         </div>
       )}
       <Waypoint onEnter={handleOnscroll} />
-      <div className="w-full h-20" />
+      <div className="w-full h-80 sm:h-20" />
     </div>
   );
 };
