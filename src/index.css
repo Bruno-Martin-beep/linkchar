@@ -23,7 +23,17 @@
 }
 
 html {
+  height: -webkit-fill-available;
   font-size: 1vw;
+}
+
+body {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: -webkit-fill-available;
+  background-color: #17171b;
 }
 
 .axiforma {

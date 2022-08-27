@@ -19,9 +19,9 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className="bg-black w-full h-screen overflow-hidden">
+    <div className="relative w-full h-screen bg-black  overflow-hidden">
       <Navbar />
-      {page === "home" && (
+      {(page === "home" || page === "panel") && (
         <>
           <Home />
           <Panel />

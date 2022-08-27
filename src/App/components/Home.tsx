@@ -14,8 +14,8 @@ const Home = () => {
   }, [popularList]);
 
   return (
-    <div className="w-full h-full pt-[6.1rem] pl-[29.1rem] ">
-      <div className="w-full h-full pt-12 pr-16 pb-12 pl-20 space-y-8 overflow-auto">
+    <div className="w-full h-full pt-80 sm:pt-24 pb-80 sm:pb-0 sm:pl-[29.1rem]">
+      <div className="w-full h-full pt-12 sm:pr-16 pb-12 sm:pl-20 space-y-24 sm:space-y-8 overflow-auto">
         {popularList.length !== 0 && <CoverFilm movie={popularList[random]} />}
         <WatchingMovies />
         <PopularMovies />

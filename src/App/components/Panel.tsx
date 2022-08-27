@@ -4,7 +4,7 @@ import Genres from "./Genres";
 
 const Panel = () => {
   return (
-    <div className="flex flex-col absolute top-0 left-0 w-[29rem] h-full border-r-[0.1rem] border-neutral-700/50 pt-[6.1rem] z-0">
+    <div className="hidden sm:flex flex-col absolute top-0 left-0 w-[29rem] h-full border-r-[0.1rem] border-neutral-700/50 pt-[6.1rem] z-0">
       <img
         src={arrowBack}
         className="absolute top-[12.5rem] right-0 translate-x-1/2"
