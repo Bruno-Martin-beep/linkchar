@@ -25,17 +25,17 @@ const Search = () => {
   };
 
   return (
-    <div className="flex">
-      <label className="flex items-center space-x-6 sm:space-x-2 py-6 sm:py-2 pr:12 sm:pr-4 pl-6 sm:pl-2 rounded-full bg-neutral-500/50 outline outline-2 outline-transparent focus-within:outline-neutral-50">
+    <div className="flex static sm:absolute top-1/2 left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 lg:static lg:translate-x-0 lg:translate-y-0">
+      <label className="flex items-center space-x-6 sm:space-x-4 lg:space-x-2 py-6 sm:py-4 lg:py-2 pr:12 sm:pr-8 lg:pr-4 pl-6 sm:pl-4 lg:pl-2 rounded-full bg-neutral-500/50 outline outline-2 outline-transparent focus-within:outline-neutral-50">
         <img
           src={searchIcon}
-          className="w-24 h-24 sm:w-8 sm:h-8"
+          className="w-24 h-24 sm:w-16 sm:h-16 lg:w-8 lg:h-8"
           alt="search"
         />
         <input
           type="text"
           value={value}
-          className="w-[30rem] sm:w-40 text-5xl sm:text-base bg-transparent focus-visible:outline-none"
+          className="w-[30rem] sm:w-80 lg:w-40 text-5xl sm:text-3xl lg:text-base bg-transparent focus-visible:outline-none"
           onChange={handleInput}
         />
       </label>
